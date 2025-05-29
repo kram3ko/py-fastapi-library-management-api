@@ -16,7 +16,7 @@ async def get_all_books(db: AsyncSession, author_id: int | None = None):
     return result.scalars().all()
 
 
-async def get_book_by_id(db: AsyncSession, book_id: int):
+async def get_book_by_id(db: AsyncSession, book_id: int) -> None | DbBook:
     query = (
         select(DbBook).options(selectinload(DbBook.author)).where(DbBook.id == book_id)
     )
