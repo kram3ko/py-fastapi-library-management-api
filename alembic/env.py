@@ -7,19 +7,21 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 from src.database.models import Base
 
-# this is the Alembic Config object, which provides
-# access to the values within the .ini file in use.
-load_dotenv()
 config = context.config
 
-db_url = (
-    f"postgresql+psycopg2://"
-    f"{os.environ.get('POSTGRES_USER')}:{os.environ.get('POSTGRES_PASSWORD')}@"
-    f"{os.environ.get('POSTGRES_HOST')}:{os.environ.get('POSTGRES_PORT')}/"
-    f"{os.environ.get('POSTGRES_DB')}"
-)
-config.set_main_option("sqlalchemy.url", db_url)
+#this is the Alembic Config object, which provides
+#access to the values within the .ini file in use.
 
+# Postgres
+# load_dotenv()
+# db_url = (
+#     f"postgresql+psycopg2://"
+#     f"{os.environ.get('POSTGRES_USER')}:{os.environ.get('POSTGRES_PASSWORD')}@"
+#     f"{os.environ.get('POSTGRES_HOST')}:{os.environ.get('POSTGRES_PORT')}/"
+#     f"{os.environ.get('POSTGRES_DB')}"
+# )
+# config.set_main_option("sqlalchemy.url", db_url)
+#
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
