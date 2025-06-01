@@ -7,7 +7,7 @@ settings = get_settings()
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./library.db"
 
-#Postgres settings
+# Postgres settings
 # SQLALCHEMY_DATABASE_URL = (
 #     f"postgresql+asyncpg://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}"
 #     f"@{settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_DB}"
